@@ -1,13 +1,15 @@
 <script>
-	import Nav from '../components/nav.svelte';
-	console.log('hi');
+	import { pokemons } from '../stores/pokestore';
+	console.log($pokemons);
 </script>
 
 <svelte:head>
 	<title>Pokedex</title>
 </svelte:head>
 
-<h1>Pokedex</h1>
+{#each $pokemons as pokemon}
+	<p>{pokemon.name}</p>
+{/each}
 
 <style>
 	h1 {
