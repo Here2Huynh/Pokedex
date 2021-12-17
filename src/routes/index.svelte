@@ -9,8 +9,11 @@
 	$: {
 		console.log(searchTerm);
 		if (searchTerm.length) {
+			filteredPokemon = filteredPokemon.filter((pokemon) =>
+				pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+			);
 		} else {
-			filteredPokemon = [...pokemons];
+			filteredPokemon = [...$pokemons];
 		}
 	}
 </script>
@@ -29,7 +32,7 @@
 />
 
 <div class="py-4 grid gap-4 md:grid-cols-2 grid-cols-1">
-	{#each $filteredPokemon as pokemon}
+	{#each filteredPokemon as pokemon}
 		<PokemonCard {pokemon} />
 	{/each}
 </div>
