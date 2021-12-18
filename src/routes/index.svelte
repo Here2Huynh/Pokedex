@@ -30,7 +30,6 @@
 	$: searchTerm = '';
 
 	$: {
-		console.log(searchTerm);
 		if (searchTerm.length) {
 			filteredPokemon = pokemons.filter((pokemon) =>
 				pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
